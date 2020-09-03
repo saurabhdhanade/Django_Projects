@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Application</title>
+  </head>
+
+
+  <body>
+  <!-- As a heading -->
+<nav class="navbar navbar-light bg-light">
+  <span class="navbar-brand mb-0 h1">Application</span>
+</nav>
+<div class="container">
+<div class="d-flex align-items-center"><h1>Welcome to Application</h1></div>
+	
+    
+    
+    <!-- Form Starting -->
+    <form method='post' class='was-validated'>{% csrf_token %}
+    
+  		<div class="form-group">
+		    <label for="formGroupExampleInput">Name</label>
+		    <input type="text" name=name class="form-control" id="formGroupExampleInput" placeholder="Enter Full Name" required>
+  		</div>
+  		
+  		<div class="form-group">
+		    <label for="formGroupExampleInput">User Name</label>
+		    <input type="text" name=username class="form-control" id="pass" placeholder="Enter username" required>
+  		</div>
+  		
+  		<div class="form-group">
+		    <label for="password">Password</label>
+		    <input id="password" name="password" class="form-control" type="password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 6 characters' : ''); if(this.checkValidity()) form.password_two.pattern = this.value;" placeholder="Password" required>
+  		</div>
+  		
+  		<div class="form-group">
+		    <label for="password_two">Confirm Password</label>
+		    <input id="password_two" name="password_two" class="form-control" type="password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');" placeholder="Confirm Password" required>
+
+  		</div>
+  		
+		  <div class="form-group">
+		    <label for="formGroupExampleInput2">Address</label>
+		    <input type="text" name=address class="form-control" id="formGroupExampleInput2" placeholder="Address" required>
+		  </div>
+		  <div class="form-group">
+		    <label for="exampleInputEmail1">Email</label>
+		    <input type="email"  name=email class="form-control" placeholder="Enter Valid Email Add" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+		    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+		  </div>
+		  <div>
+		  	<div class="form-group">
+		    <label for="formGroupExampleInput">Phone Number</label>
+		    <input type="tel" name=phone class="form-control" id="formGroupExampleInput" placeholder="Enter 10 digit Valid Phone No." required>
+  		</div>
+		  </div>
+		  <div>
+		  	<div class="form-group">
+		    <label for="formGroupExampleInput">Designation</label>
+		  	<select class="custom-select" name=designation required>
+			  <option selected>Select Designation</option>
+			  <option value="Plant In-charge">Plant In-charge</option>
+			  <option value="Supervisor">Supervisor</option>
+			  <option value="Chemist">Chemist</option>
+			  <option value="Operator">Operator</option>
+			  <option value="Helper">Helper</option>
+			  <option value="Housekeeper">Housekeeper</option>
+			  <option value="Security_Guard">Security Guard</option>
+			</select>
+		  </div>
+		  
+		  <div class="form-group">
+		    <label for="formGroupExampleInput">Select Gender</label>
+		  <div class="custom-control custom-radio">
+			  <input type="radio" id="customRadio1" name="gender" value=male class="custom-control-input">
+			  <label class="custom-control-label" for="customRadio1">Male</label>
+			</div>
+			<div class="custom-control custom-radio">
+			  <input type="radio" id="customRadio2" name="gender" value=female class="custom-control-input">
+			  <label class="custom-control-label" for="customRadio2">Female</label>
+		</div>
+		</div>
+		<div>
+		  	<div class="form-group">
+		    <label for="formGroupExampleInput">Date of Birth</label>
+		    <input type="date" name=dob class="form-control" id="formGroupExampleInput" placeholder="eg. DD/MM/YYYY" required>
+  		</div>
+  		
+  		<div>
+		  	<div class="form-group">
+		    <label for="formGroupExampleInput">Age</label>
+		    <input type="text" name=age class="form-control" id="formGroupExampleInput" placeholder="eg. 29" required>
+  		</div>
+  		
+  		<div class="form-group">
+		    <label for="formGroupExampleInput">Blood Group</label>
+		  	<select class="custom-select" name=blood required>
+			  <option selected>Select Blood Group</option>
+			  <option value="+A">+A</option>
+			  <option value="+B">+B</option>
+			  <option value="+AB">+AB</option>
+			  <option value="+O">+O</option>
+			  <option value="-A">-A</option>
+			  <option value="-B">-B</option>
+			  <option value="-AB">-AB</option>
+			  <option value="-O">-O</option>
+			 </select>
+		  </div>
+		  
+		  <hr>
+  		<button type="submit" class="btn btn-primary">Submit</button>
+	</div>
+	</form>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  
+ 	
+  
+  
+  </body>
+</html>
