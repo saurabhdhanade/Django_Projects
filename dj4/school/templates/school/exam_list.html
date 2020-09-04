@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>LIST</title>
+</head>
+<body>
+<p>   <h1>EXAM LIST</h1>
+	{% for e1 in exam_list %}
+	<h3><a href= '/school/exam/{{e1.id}}'>{{ e1.subject }}</a></h3>
+	{% endfor %}
+	
+
+
+
+<a href = '../'>BACK</a>
+</body>
+</html>
+{% endblock %}

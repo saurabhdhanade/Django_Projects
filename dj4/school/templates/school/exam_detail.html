@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>LIST</title>
+</head>
+<body>
+<h1>EXAM Detail</h1>
+
+<h3>Student Name: {{ exam.name }}</h3>
+<h3>Subject: {{ exam.subject }}</h3>
+<h3>Exam Center: {{ exam.center }}</h3>
+<h3>Exam Roll Number: {{ exam.rollnum }}</h3>
+<h3>Exam Date: {{ exam.examdate }}</h3>
+
+
+
+	
+
+
+<a href = '../'>BACK</a>
+</body>
+</html>
+{% endblock %}
